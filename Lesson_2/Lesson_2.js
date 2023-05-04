@@ -49,7 +49,7 @@ if (!(x !== 0)) {console.log('Вірно')}
 else {console.log('Невірно')}
 
 // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
-let time =prompt('Введіть число від 0 до 59')
+let time = prompt('Введіть число від 0 до 59')
 
 // (в першу, другу, третю или четверту частину години).
 if (time <= 15) {console.log('в першу')}
@@ -59,15 +59,15 @@ else if (time <=60) {console.log('в четверту')}
 else {console.log('?????')}
 
 // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
-let date =prompt('Введіть число від 1 до 31')
+let day = prompt('Введіть число від 1 до 31')
 
-if (date <= 10) {console.log('в першу')}
-else if (date <=20) {console.log('в другу')}
-else if (date <=31) {console.log('в третю')}
+if (day <= 10) {console.log('в першу')}
+else if (day <=20) {console.log('в другу')}
+else if (day <=31) {console.log('в третю')}
 else {console.log('?????')}
 
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
-let week =prompt('Введіть число дня тижня від 1 до 7')
+let week = prompt('Введіть число дня тижня від 1 до 7')
 switch (week){
     case "1":
         console.log('Monday: 9.00 work');
@@ -95,19 +95,22 @@ switch (week){
 }
 
 // - Користувач вводить або має два числа.
-let a = prompt('Введіть перше число')
-let b = prompt('Введіть друге число')
+let a = +prompt('Введіть перше число')
+let b = +prompt('Введіть друге число')
 
 // Потрібно знайти та вивести максимальне число з тих двох .
-if (a>b || a===b) {console.log(a)}
-
 // Також потрібно врахувати коли введені рівні числа.
-else {console.log(b)}
+if (a>b || a===b) {console.log(a)}
+else if (a<b) {console.log(b)}
+else {console.log('?????')}
 
-//- є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно).
-// Напишіть код який, за допомоги  оператора || буде присвоювати змінній х значення "default"
-// якщо значення змінної х являється falsy (хибноподібні, тобто приводиться до false)
+//- є змінна y, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно).
+// Напишіть код який, за допомоги  оператора || буде присвоювати змінній y значення "default"
+// якщо значення змінної y являється falsy (хибноподібні, тобто приводиться до false)
 
+let y =6
+y = y ||'default';
+console.log(y);
 
 // з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray.
 // За допомоги іф перевірити кожен його елемент на тривалість навчання.
@@ -122,5 +125,9 @@ let coursesAndDurationArray = [
     {title: 'Frontend', monthDuration: 4}
 ];
 console.log(coursesAndDurationArray)
-if (coursesAndDurationArray['monthDuration'] > 5) {console.log('Супер')}
-else {console.log('error')}
+if (coursesAndDurationArray[0]['monthDuration'] > 5) {console.log('Супер')} else {console.log('Вчись далі')}
+if (coursesAndDurationArray[1]['monthDuration'] > 5) {console.log('Супер')} else {console.log('Вчись далі')}
+if (coursesAndDurationArray[2]['monthDuration'] > 5) {console.log('Супер')} else {console.log('Вчись далі')}
+if (coursesAndDurationArray[3]['monthDuration'] > 5) {console.log('Супер')} else {console.log('Вчись далі')}
+if (coursesAndDurationArray[4]['monthDuration'] > 5) {console.log('Супер')} else {console.log('Вчись далі')}
+if (coursesAndDurationArray[5]['monthDuration'] > 5) {console.log('Супер')} else {console.log('Вчись далі')}
