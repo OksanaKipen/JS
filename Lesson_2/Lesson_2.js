@@ -26,43 +26,81 @@ console.log(books1)
 // - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
 
 let users=[
-    {name: 'Olga'},
-    {lastName: 'Krupa'},
-    {username: 'olgakrupa'},
-    {phoneNumber: 21545666},
-    {password: 'krupa111'},
-    {age: 41},
-    {skills: 'ja, java, html'},
-    {education: 'high school'},
-    {hobbies: 'football'},
-    {status: 'true'}
+    {name: 'Oleg',
+    username: 'olegkrupa',
+    password: 'апропраа'},
+
+    {name: 'Ihor',
+    username: 'Ihor123',
+    password: 'dddd111'},
+
+    {name: 'Olga',
+    username: 'olga123',
+    password: 'grh111'},
+
+    {name: 'Rostik',
+    username: 'rost',
+    password: 'gfrt6'},
+
+    {name: 'Vitalii',
+    username: 'vetal',
+    password: 'sdfgh'},
+
+    {name: 'Andrii',
+    username: 'andi',
+    password: 'fdgdhs'},
+
+    {name: 'vasya',
+    username: 'vasyl111',
+    password: 'ghjgf'},
+
+    {name: 'Olena',
+    username: 'olenka555',
+    password: '11111fbd'},
+
+    {name: 'Sasha',
+    username: 'sasha123',
+    password: 'ghrshs123'},
+
+    {name: 'Oksana',
+    username: 'oksana111',
+    password: 'fhsfhjfg45'},
 ]
-console.log(users[4]);
+console.log(users[0]['password']);
+console.log(users[1]['password']);
+console.log(users[2]['password']);
+console.log(users[3]['password']);
+console.log(users[4]['password']);
+console.log(users[5]['password']);
+console.log(users[6]['password']);
+console.log(users[7]['password']);
+console.log(users[8]['password']);
+console.log(users[9]['password']);
 
 //Логічні розгалуження:
 // - Є змінна х, якій ви надаєте довільне числове значення.
 let x = 10
 console.log(x);
 // Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
-if (!(x !== 0)) {console.log('Вірно')}
+if (x !== 0) {console.log('Вірно')}
 else {console.log('Невірно')}
 
 // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
 let time = prompt('Введіть число від 0 до 59')
 
 // (в першу, другу, третю или четверту частину години).
-if (time <= 15) {console.log('в першу')}
-else if (time <=30) {console.log('в другу')}
-else if (time <=45) {console.log('в третю')}
-else if (time <=60) {console.log('в четверту')}
+if (time >= 0 && time <= 15) {console.log('в першу')}
+else if (time >= 16 && time <=30) {console.log('в другу')}
+else if (time >= 31 && time <=45) {console.log('в третю')}
+else if (time >= 46 && time <=60) {console.log('в четверту')}
 else {console.log('?????')}
 
 // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
 let day = prompt('Введіть число від 1 до 31')
 
-if (day <= 10) {console.log('в першу')}
-else if (day <=20) {console.log('в другу')}
-else if (day <=31) {console.log('в третю')}
+if (day >= 1 && day <= 10) {console.log('в першу')}
+else if (day  >= 11 && day <= 20) {console.log('в другу')}
+else if (day >= 21 && day <= 31) {console.log('в третю')}
 else {console.log('?????')}
 
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
