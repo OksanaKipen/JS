@@ -1,31 +1,25 @@
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
 function rectangle (a,b){
-    a=5;
-    b=8;
-    let result;
-    result = a*b;
-    return result;
+    return a*b;
 }
-console.log(rectangle())
+const s = rectangle(10,20)
+console.log(s)
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 function circle(r){
-    r=8;
-    let result;
-    result = Math.PI*Math.pow(r,2);
-    return result;
+
+    return Math.PI*Math.pow(r,2);
+
 }
-console.log(circle())
+const s1 = circle(12)
+console.log(s1)
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
 function cylinder(h,r){
-    h=6;
-    r=9;
-    let result;
-    result = 2*Math.PI*h*r;
-    return result;
+    return 2*Math.PI*h*r;
 }
-console.log(cylinder())
+const s2 = cylinder(5,8)
+console.log(s2)
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
 arrays([41, 152, 39]);
@@ -100,6 +94,7 @@ let users = [
 arrayObj(users)
 
 // - створити функцію яка повертає найменьше число з масиву
+const numbers = [526,5,78,36985,45,55,25,4785,145,2];
 function minNumberOfArray(array) {
     if (array.length === 0) {
         return null;
@@ -112,7 +107,7 @@ function minNumberOfArray(array) {
     }
     return  minNumber;
 }
-let numbers = [526,5,78,36985,45,55,25,4785,145,2];
+
 let min = minNumberOfArray(numbers)
 console.log(min)
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
@@ -130,7 +125,7 @@ console.log(sum(sumNumbers))
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 function swap(arr,index1,index2){
     if (index1 >=0 && index1<arr.length && index2>=0 && index2<arr.length){
-        let newIndex = arr[index1];
+        const newIndex = arr[index1];
         arr[index1] = arr[index2];
         arr[index2] = newIndex;
     }
@@ -163,3 +158,4 @@ let currencyValues=[
 exchangeCurrency = 'USD';
 let exchangedAmount = exchange(sumUAH, currencyValues, exchangeCurrency);
 console.log(exchangedAmount);
+
