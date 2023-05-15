@@ -159,3 +159,18 @@ exchangeCurrency = 'USD';
 let exchangedAmount = exchange(sumUAH, currencyValues, exchangeCurrency);
 console.log(exchangedAmount);
 
+
+// створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
+
+function sRect(a,b){
+    return a*b;
+}
+console.log(sRect(5,8))
+
+// створити функцію яка створює параграф з текстом. Текст задати через аргумент
+
+function paragraf1(){
+
+    return document.write('<p>text</p>')
+}
+paragraf1('text');
