@@ -58,6 +58,20 @@ const usersList = (arr) =>{
 }
 usersList(users)
 
+const usersList1 = arr => {
+    arr.forEach(user => {
+        document.write(`<div>id: ${user.id} - name: ${user.name} - age: ${user.age}</div>`);
+    });
+    return arr;
+};
+const users1 = [
+    { id: 1, name: 'John', age: 25 },
+    { id: 2, name: 'Jane', age: 30 },
+    { id: 3, name: 'Bob', age: 35 }
+];
+usersList1(users1);
+
+
 // - створити функцію яка повертає найменше число з масиву
 const findMin = arr => Math.min(...arr)
 const numbers = [5865, 277, 48, 11, 5, 111, 3, 9, 2]
