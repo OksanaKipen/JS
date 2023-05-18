@@ -77,12 +77,60 @@ let mapCourses = coursesAndDurationArray.map((course, index) =>{
 console.log(mapCourses)
 // =========================
 //     описати колоду карт (від 6 до туза без джокерів)
+let cards = [
+    { cardSuit: 'spade', value: '6', color: 'black' },
+    { cardSuit: 'diamond', value: '6', color: 'red' },
+    { cardSuit: 'heart', value: '6', color: 'red' },
+    { cardSuit: 'clubs', value: '6', color: 'black' },
+    { cardSuit: 'spade', value: '7', color: 'black' },
+    { cardSuit: 'diamond', value: '7', color: 'red' },
+    { cardSuit: 'heart', value: '7', color: 'red' },
+    { cardSuit: 'clubs', value: '7', color: 'black' },
+    { cardSuit: 'spade', value: '8', color: 'black' },
+    { cardSuit: 'diamond', value: '8', color: 'red' },
+    { cardSuit: 'heart', value: '8', color: 'red' },
+    { cardSuit: 'clubs', value: '8', color: 'black' },
+    { cardSuit: 'spade', value: '9', color: 'black' },
+    { cardSuit: 'diamond', value: '9', color: 'red' },
+    { cardSuit: 'heart', value: '9', color: 'red' },
+    { cardSuit: 'clubs', value: '9', color: 'black' },
+    { cardSuit: 'spade', value: '10', color: 'black' },
+    { cardSuit: 'diamond', value: '10', color: 'red' },
+    { cardSuit: 'heart', value: '10', color: 'red' },
+    { cardSuit: 'clubs', value: '10', color: 'black' },
+    { cardSuit: 'spade', value: 'jack', color: 'black' },
+    { cardSuit: 'diamond', value: 'jack', color: 'red' },
+    { cardSuit: 'heart', value: 'jack', color: 'red' },
+    { cardSuit: 'clubs', value: 'jack', color: 'black' },
+    { cardSuit: 'spade', value: 'queen', color: 'black' },
+    { cardSuit: 'diamond', value: 'queen', color: 'red' },
+    { cardSuit: 'heart', value: 'queen', color: 'red' },
+    { cardSuit: 'clubs', value: 'queen', color: 'black' },
+    { cardSuit: 'spade', value: 'king', color: 'black' },
+    { cardSuit: 'diamond', value: 'king', color: 'red' },
+    { cardSuit: 'heart', value: 'king', color: 'red' },
+    { cardSuit: 'clubs', value: 'king', color: 'black' },
+    { cardSuit: 'spade', value: 'ace', color: 'black' },
+    { cardSuit: 'diamond', value: 'ace', color: 'red' },
+    { cardSuit: 'heart', value: 'ace', color: 'red' },
+    { cardSuit: 'clubs', value: 'ace', color: 'black' },
+];
 // - знайти піковий туз
+let findAce = cards.filter(card => card.cardSuit === 'spade' && card.value === 'ace')
+console.log(findAce)
 // - всі шістки
+let findSix = cards.filter(card => card.value === '6');
+console.log(findSix)
 // - всі червоні карти
+let findRedCards = cards.filter(card => card.color === 'red');
+console.log(findRedCards);
 // - всі буби
+let findDimond = cards.filter(card => card.cardSuit === 'diamond');
+console.log(findDimond)
+
 // - всі трефи від 9 та більше
-//
+let findClubs = cards.filter(card => card.cardSuit === 'clubs' && (card.value >= 9 || ['jack','queen','king','ace'].includes(card.value)) );
+console.log(findClubs)
 // {
 //     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
 //         value: '', // '6'-'10', 'ace','jack','queen','king','joker'
@@ -98,7 +146,89 @@ console.log(mapCourses)
 //     hearts:[],
 //     clubs:[]
 // }
+let groupCards = cards.reduce((acumulator, card) =>{
+        acumulator[card.cardSuit] = acumulator[card.cardSuit] || [];
+        acumulator[card.cardSuit].push(card);
+    return acumulator
+}, {});
+console.log(groupCards)
 // =========================
+
 //     взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
-// --написати пошук всіх об'єктів, в який в modules є sass
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
+
+// --написати пошук всіх об'єктів, в який в modules є css
+let findCss = coursesArray.filter(course => course.modules.includes('css'));
+console.log(findCss)
+
 // --написати пошук всіх об'єктів, в який в modules є docker
+let findDocker = coursesArray.filter(course => course.modules.includes('docker'));
+console.log(findDocker)
