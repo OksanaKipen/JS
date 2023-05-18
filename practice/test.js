@@ -110,3 +110,35 @@ function exchange(sumUAH,currencyValues,exchangeCurrency){
 }
 
 console.log(exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD'))
+
+
+// MAP
+
+// Завдання 1: Збільшити кожен елемент масиву на 1.
+//const numbers = [5,8,78,56,985,47,0,1]
+const plusNumbers = numbers.map(el => el+1);
+console.log(plusNumbers)
+// Завдання 2: Перетворити кожен елемент масиву рядків на їх заголовний варіант.
+let arrLetter = ['new', 'day', 'cool'];
+const upperLetter = arrLetter.map(el => el.toUpperCase());
+console.log(upperLetter)
+//     Завдання 3: Витягнути певне поле з кожного об'єкта масиву і створити новий масив з цими значеннями.
+// const users =[
+//     {id:1, name: 'Olga', age: 31},
+//     {id:2, name: 'Sasha', age: 28},
+//     {id:3, name: 'Oksana', age: 19},
+//     {id:4, name: 'Petro', age: 41},
+//     {id:5, name: 'Vlad', age: 11}
+// ]
+let nameUsers = users.map(el => [el.name, el.age]);
+console.log(nameUsers)
+
+//Завдання 1: Перетворити масив чисел на масив їх квадратів.
+const kvadrat = numbers.map(el => el**2);
+console.log(kvadrat)
+//
+// Завдання 2: Перетворити масив рядків на масив їх довжин.
+const lengthUsers = users.map(el => el.name.length);
+console.log(lengthUsers)
+
+// Завдання 3: Додати префікс "User: " до кожного елемента масиву рядків.

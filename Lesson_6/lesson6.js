@@ -10,32 +10,35 @@ const stringLength = (strings)=>{
 
 // - Перевести до великого регістру наступні стрінгові значення
 // 'hello world', 'lorem ipsum', 'javascript is cool'
-upperCase = (...text) =>{
+let upperCase = (...text) =>{
     text.forEach(txt=>console.log(txt.toUpperCase()))
 }
 upperCase('hello world', 'lorem ipsum', 'javascript is cool')
 
 // - Перевести до нижнього регістру настипні стрінгові значення
 // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
-lowerCase = (...texts) =>{
+let lowerCase = (...texts) =>{
     texts.forEach(text => console.log(text.toLowerCase()))
 }
 lowerCase('HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
 )
+const lowerCase1 = ['HELLO', 'LOREM'].map(el => el.toLowerCase());
+console.log(lowerCase1);
+
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 let str = ' dirty string   '
-str.replace(' ', '')
-console.log(str)
+const remove = str.trim()
+console.log(remove)
 
 // - Напишіть функцію stringToArray(str), яка перетворює рядок на масив слів.
 // let arr = stringToArray(strPoem); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
-const stringToArray = (strPoem) => strPoem.split(' ')
 let strPoem = 'Ревуть воли як ясла повні';
+const stringToArray = (strPoem) => strPoem.split(' ')
 let word = stringToArray(strPoem)
 console.log(word);
 
 // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
-numbers = [10,8,-7,55,987,-1011,0,1050,0];
+let numbers = [10,8,-7,55,987,-1011,0,1050,0];
 let map = numbers.map(num => num.toString())
 console.log(map)
 
@@ -129,7 +132,8 @@ let findDimond = cards.filter(card => card.cardSuit === 'diamond');
 console.log(findDimond)
 
 // - всі трефи від 9 та більше
-let findClubs = cards.filter(card => card.cardSuit === 'clubs' && (card.value >= 9 || ['jack','queen','king','ace'].includes(card.value)) );
+let findClubs = cards.filter(card => ['9', '10', 'jack','queen','king','ace'].includes(card.value)
+    && card.cardSuit === 'clubs');
 console.log(findClubs)
 // {
 //     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
@@ -146,10 +150,10 @@ console.log(findClubs)
 //     hearts:[],
 //     clubs:[]
 // }
-let groupCards = cards.reduce((acumulator, card) =>{
-        acumulator[card.cardSuit] = acumulator[card.cardSuit] || [];
-        acumulator[card.cardSuit].push(card);
-    return acumulator
+let groupCards = cards.reduce((accumulator, card) =>{
+        accumulator[card.cardSuit] = accumulator[card.cardSuit] || [];
+        accumulator[card.cardSuit].push(card);
+    return accumulator
 }, {});
 console.log(groupCards)
 // =========================
