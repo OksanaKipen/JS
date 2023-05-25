@@ -109,7 +109,7 @@ function exchange(sumUAH,currencyValues,exchangeCurrency){
 
 }
 
-console.log(exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD'))
+console.log(exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD'));
 
 
 // MAP
@@ -139,6 +139,5 @@ console.log(kvadrat)
 //
 // Завдання 2: Перетворити масив рядків на масив їх довжин.
 const lengthUsers = users.map(el => el.name.length);
-console.log(lengthUsers)
-
+console.log(lengthUsers);
 // Завдання 3: Додати префікс "User: " до кожного елемента масиву рядків.
