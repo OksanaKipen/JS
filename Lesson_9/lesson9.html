@@ -4,20 +4,32 @@
     <meta charset="UTF-8">
     <title>lesson 9</title>
     <style>
+        body{
+            margin: 0;
+        }
+        .alpha{
+            font-size: 22px;
+            text-align: center;
+        }
+        .beta{
+            background-color: lime;
+        }
 
         .courses{
             background-color: lightseagreen;
             font-size: 24px;
             text-align: left;
+            width: 20vw;
         }
         .menu{
             background-color: mistyrose;
             font-size: 24px;
-            /*text-align: center;*/
+            width: 7vw;
         }
         .item{
             background-color: deeppink;
-            width: 40vw;
+            width: 20vw;
+            text-align: center;
         }
         .heading{
             font-size: 20px;
@@ -26,8 +38,30 @@
             font-size: 18px;
         }
         .member{
-            font-size: 18px;
+            font-size: 20px;
             background-color: azure;
+            text-align: center;
+        }
+        .divMain{
+            background-color: blueviolet;
+            font-size: 18px;
+            width: 100vw;
+            text-align: center;
+        }
+        .divHead{
+            width: 100vw;
+            text-align: center;
+            display: flex;
+        }
+        .monthDurationStyle{
+            background-color: cornflowerblue;
+        }
+        .hoursDurationStyle{
+            background-color: yellow;
+        }
+        .liItemModule{
+            font-size: 20px;
+            padding-top: 10px;
         }
 
     </style>
@@ -39,9 +73,10 @@
     <ul id="blockCourses"></ul>
     <div id='items'></div>
     <div id='memberSimpsons'></div>
+    <div id='blockArray'></div>
 
 <script>
-    //
+
     // - створити блок,
     //     - додати йому класи wrap, collapse, alpha, beta
     // - додати стилі(довільні значення) : колір фону, колір тексту, розмір тексту
@@ -50,8 +85,6 @@
     let blockDiv = document.createElement('div');
     blockDiv.innerText = 'Text class';
     blockDiv.classList.add('wrap', 'collapse', 'alpha', 'beta');
-    blockDiv.style.backgroundColor = 'orange';
-    blockDiv.style.fontSize = '24px';
 
     document.body.appendChild(blockDiv);
 
@@ -193,15 +226,125 @@
 
     }
 
-
     // =========================
     //     Цикл в циклі
     // - Є масив coursesArray котрий лежить в arrays.js (на цей момент ви вже знаєте де він знаходиться)
     //
-    // Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами
+    // Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей,
+    // для властивості modules зробити список з елементами
     // Приклад структири знаходиться у файлі example.png який лежить в папці з поточним фйлом
     // ------------------
+    let coursesArray = [
+        {
+            title: 'JavaScript Complex',
+            monthDuration: 5,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+        },
+        {
+            title: 'Java Complex',
+            monthDuration: 6,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'angular',
+                'aws',
+                'docker',
+                'git',
+                'java core',
+                'java advanced']
+        },
+        {
+            title: 'Python Complex',
+            monthDuration: 6,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'angular',
+                'aws',
+                'docker',
+                'python core',
+                'python advanced']
+        },
+        {
+            title: 'QA Complex',
+            monthDuration: 4,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+        },
+        {
+            title: 'FullStack',
+            monthDuration: 7,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'react',
+                'angular',
+                'aws',
+                'docker',
+                'git',
+                'node.js',
+                'python',
+                'java']
+        },
+        {
+            title: 'Frontend',
+            monthDuration: 4,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+        }
+    ];
 
+    let divBlockCoursesArray = document.getElementById('blockArray');
+    for (const elOfArray of coursesArray) {
+
+        let divMain = document.createElement('div');
+        divMain.classList.add('divMain');
+
+        divBlockCoursesArray.appendChild(divMain);
+
+        let titleOfArray = document.createElement('h1');
+        titleOfArray.innerText = `${elOfArray.title}`;
+        divMain.appendChild(titleOfArray);
+
+        let divHead = document.createElement('div')
+        divHead.classList.add('divHead');
+        divBlockCoursesArray.appendChild(divHead);
+
+        let monthDurationOfArray = document.createElement('h2');
+            monthDurationOfArray.classList.add('monthDurationStyle');
+            monthDurationOfArray.innerText = `months: ${elOfArray.monthDuration}`;
+            monthDurationOfArray.style.width = '30vw';
+
+        let hourDurationOfArray = document.createElement('h2');
+            hourDurationOfArray.classList.add('hoursDurationStyle');
+            hourDurationOfArray.innerText = `hours: ${elOfArray.hourDuration}`;
+            hourDurationOfArray.style.width = '70vw';
+
+        let listModules = document.createElement('ul');
+            for (const liModule of elOfArray.modules) {
+
+        let itemModule = document.createElement('li');
+        itemModule.classList.add('liItemModule')
+            itemModule.innerText = `${elOfArray.modules}`;
+
+            divHead.appendChild(monthDurationOfArray);
+            divHead.appendChild(hourDurationOfArray);
+            listModules.appendChild(itemModule);
+            divBlockCoursesArray.appendChild(listModules);
+
+        }
+
+    }
 
 </script>
 
