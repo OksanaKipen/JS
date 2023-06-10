@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson10</title>
+
+</head>
+<body>
+
+<form name="user">
+
+  <div><label>Name:<input type="text" name="firstname"></label></div>
+  <div><label>Surname:<input type="text" name="surname"></label></div>
+  <div><label>Age:<input type="number" name="age"></label></div>
+
+    <button>send</button>
+
+</form>
+
+<script>
+    // Стоврити форму з трьома полями для name,surname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ.
+    // Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+    const formUser = document.forms.user;
+    console.log(formUser);
+
+    formUser.addEventListener("submit", function (e){
+        e.preventDefault();
+
+        const wrapper = document.createElement('div');
+        const firstname = document.createElement('div');
+        const surname = document.createElement('div');
+        const age = document.createElement('div');
+
+        firstname.innerText = `Name: ${this.firstname.value}`;
+        surname.innerText = `Surname: ${this.surname.value}`;
+        age.innerText = `Age: ${this.age.value}`;
+
+        this.firstname.value = '';
+        this.surname.value = '';
+        this.age.value = '';
+
+        wrapper.append(firstname, surname, age);
+        document.body.appendChild(wrapper)
+    })
+
+</script>
+
+</body>
+</html>
