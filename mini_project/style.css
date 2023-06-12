@@ -1,0 +1,105 @@
+
+/*Стилизація проєкта -*/
+/*index.html - всі блоки з user - по 2 в рядок. кнопки/аосилвння розташувати під інформацією про user.*/
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+.user-container {
+    margin: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.userBlock {
+    margin-bottom: 20px;
+    background-color: greenyellow;
+    width: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.user-button {
+    margin-top: 10px;
+    width: 140px;
+    height: 35px;
+    background-color: plum;
+    border: 3px palevioletred solid;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+/*user-details.html - блок з інфою про user зверху сторінки.
+Кнопка нижчє, на 90% ширини сторінки, по центру.*/
+/*блоки з короткою іфною про post - в ряд по 5 .*/
+
+.details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.postDiv {
+    width: 40vw;
+    height: 25vh;
+    margin: 20px 0;
+    font-size: 20px;
+    border: 3px black solid;
+    display: flex;
+    justify-content: center;
+}
+.postBtn {
+    width: 90%;
+    background-color: lightsteelblue;
+    font-size: 15px;
+}
+.postsContainer {
+    width: 90%;
+    background-color: lightblue;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.postLink {
+    width: 20%;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+/*post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.*/
+/* Всі елементи котрі характеризують users, posts, comments візуалізувати, так, щоб було видно що це блоки (дати фон. марджини і тд)*/
+
+.postsDetails {
+    width: 100vw;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.usersInfo {
+    /*width: 40%;*/
+    font-size: 20px;
+    background-color: yellow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: 1.5;
+}
