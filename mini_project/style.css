@@ -89,17 +89,36 @@ body{
 .postsDetails {
     width: 100vw;
     margin: 0;
-
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .usersInfo {
-    /*width: 40%;*/
-    font-size: 20px;
-    background-color: yellow;
+    font-size: 18px;
+    background-color: lightblue;
+    border: 3px black solid;
+    padding: 10px;
+    line-height: 1.5;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    line-height: 1.5;
+}
+.commentsDiv {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.commentsBlock {
+    width: 24%;
+    margin-top: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 3px black solid;
+
+}
+h2 {
+    text-align: center;
 }
