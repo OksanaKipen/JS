@@ -10,8 +10,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
 
         const usersInfo = document.createElement('div');
         usersInfo.classList.add('usersInfo')
-        usersInfo.innerText = `
-        Post Information
+        usersInfo.innerText = `Post Information
         ID: ${post.id}
         Title: ${post.title}
         Post: ${post.body}
